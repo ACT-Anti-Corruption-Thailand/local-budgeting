@@ -81,10 +81,6 @@ export default {
   //   dir: 'dist/act-local-budgeting',
   // },
 
-  router: {
-    base: '/act-local-budgeting/',
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/styles/main.scss',
@@ -108,7 +104,7 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/google-analytics'
   ],
- 
+
   googleAnalytics: {
     id: 'G-M9CRL9RVLV'
   },
