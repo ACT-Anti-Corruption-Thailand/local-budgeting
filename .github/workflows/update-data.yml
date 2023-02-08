@@ -21,14 +21,14 @@ jobs:
       with:
         node-version: 16
         cache: 'npm'
-    - name: Install dependencies
+    - name: Install NPM packages
       run: npm ci
     - name: Fetch data
       run: npm run fetch
     - name: Upload data
       uses: burnett01/rsync-deployments@5.2.1
       with:
-        switches: -avzrp
+        switches: -avzr
         path: static/data
         remote_path: ${{ secrets.DEPLOY_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
