@@ -1304,6 +1304,7 @@ export default {
   created() {
     this.getData(this.year, this.province);
     this.getDataForChart();
+    this.getPaoPopulation(2565, this.province);
   },
   mounted() {
     setTimeout(() => {
@@ -1312,6 +1313,13 @@ export default {
   },
 
   methods: {
+    getPaoPopulation(y, p) {
+      fetch("data/" + y + "/pao-" + p + ".json")
+        .then((response) => response.json())
+        .then((data) => {
+          this.pao.population = data.pao.population;
+        });
+    },
     update(newp, oldp) {
       let newindex = this.data_result.findIndex((object) => {
         return object.name === newp;
