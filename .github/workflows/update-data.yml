@@ -28,7 +28,7 @@ jobs:
     - name: Upload data
       uses: burnett01/rsync-deployments@5.2.1
       with:
-        switches: -avzr
+        switches: -avzr --omit-dir-times --delete
         path: static/data
         remote_path: ${{ secrets.DEPLOY_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
