@@ -26,23 +26,11 @@ jobs:
     - name: Fetch data
       run: npm run fetch
     - name: Upload data
-      id: rsync01
-      continue-on-error: true
-      uses: burnett01/rsync-deployments@5.2.1
+      uses: appleboy/scp-action@v0.1.4
       with:
-        switches: -avzr --omit-dir-times --no-owner --no-group --no-perms --delete
-        path: static/data
-        remote_path: ${{ secrets.DEPLOY_PATH }}
-        remote_host: ${{ secrets.DEPLOY_HOST }}
-        remote_user: ${{ secrets.DEPLOY_USER }}
-        remote_key: ${{ secrets.DEPLOY_KEY }}
-    - name: Upload data (Retry if the 1st attempt fail)
-      uses: burnett01/rsync-deployments@5.2.1
-      if: steps.rsync01.outcome == 'failure'
-      with:
-        switches: -avzr --omit-dir-times --no-owner --no-group --no-perms --delete
-        path: static/data
-        remote_path: ${{ secrets.DEPLOY_PATH }}
-        remote_host: ${{ secrets.DEPLOY_HOST }}
-        remote_user: ${{ secrets.DEPLOY_USER }}
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        source: "static/data/*"
+        target: ${{ secrets.DEPLOY_PATH }}
+        overwrite: true
