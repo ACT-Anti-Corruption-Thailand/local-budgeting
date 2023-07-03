@@ -30,7 +30,7 @@ jobs:
       continue-on-error: true
       uses: burnett01/rsync-deployments@5.2.1
       with:
-        switches: -avzr --omit-dir-times --delete
+        switches: -avzr --no-owner --no-group --no-perms --delete
         path: static/data
         remote_path: ${{ secrets.DEPLOY_PATH }}
         remote_host: ${{ secrets.DEPLOY_HOST }}
