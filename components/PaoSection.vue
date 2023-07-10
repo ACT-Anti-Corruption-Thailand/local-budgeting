@@ -1314,7 +1314,7 @@ export default {
 
   methods: {
     getPaoPopulation(y, p) {
-      fetch("data/" + y + "/pao-" + p + ".json")
+      fetch("/data/" + y + "/pao-" + p + ".json")
         .then((response) => response.json())
         .then((data) => {
           this.pao.population = data.pao.population;
@@ -1401,7 +1401,7 @@ export default {
       this.total_income = 0;
       this.acc_data = [];
 
-      fetch("data/" + y + "/pao-" + p + ".json")
+      fetch("/data/" + y + "/pao-" + p + ".json")
         .then((response) => response.json())
         .then((data) => {
           this.tasks = data.tasks;
@@ -1452,7 +1452,7 @@ export default {
         });
     },
     getDataForChart() {
-      fetch("data/2565/nation-wide.json")
+      fetch("/data/2565/nation-wide.json")
         .then((response) => response.json())
         .then((data) => {
           this.data_result = data.budgetPerCapita;

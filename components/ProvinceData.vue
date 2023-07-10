@@ -463,7 +463,7 @@ export default {
       this.groupedByAreaSlide = [];
       this.total_work_type = 0;
 
-      fetch("data/" + y + "/pao-" + p + ".json")
+      fetch("/data/" + y + "/pao-" + p + ".json")
         .then((response) => response.json())
         .then((data) => {
           this.total = data.total;

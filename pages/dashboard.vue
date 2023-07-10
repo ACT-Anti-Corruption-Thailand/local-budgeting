@@ -1014,7 +1014,7 @@ export default {
       this.selected = y;
       this.selected_year_province = y;
       this.selected_province = "";
-      fetch("data/metadata.json")
+      fetch("/data/metadata.json")
         .then(response => response.json())
         .then(data => {
           data.provincesByYears[y].sort((a, b) => a.localeCompare(b));
@@ -1036,7 +1036,7 @@ export default {
       this.groupedByAreaSlide = [];
       this.total_work_type = 0;
 
-      fetch("data/" + year + "/nation-wide.json")
+      fetch("/data/" + year + "/nation-wide.json")
         .then(response => response.json())
         .then(data => {
           this.total_nationwide = data.total;
@@ -1082,7 +1082,7 @@ export default {
           });
         });
 
-      fetch("data/metadata.json")
+      fetch("/data/metadata.json")
         .then(response => response.json())
         .then(data => {
           this.updatedAt = data.updatedAt;
@@ -1097,7 +1097,7 @@ export default {
         });
     },
     getProvinceData(y, p) {
-      fetch("data/" + y + "/pao-" + p + ".json")
+      fetch("/data/" + y + "/pao-" + p + ".json")
         .then(response => response.json())
         .then(data => {
           this.tasks = data.tasks;
@@ -1113,7 +1113,7 @@ export default {
       this.keywordSlide = [];
       this.selected_keyword = text;
 
-      fetch("data/keywords.json")
+      fetch("/data/keywords.json")
         .then(response => response.json())
         .then(data => {
           let a = Object.entries(data);
