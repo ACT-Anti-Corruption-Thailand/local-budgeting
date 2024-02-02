@@ -1024,6 +1024,11 @@ export default {
     getNationWideData(year) {
       this.groupedByAreaSlide = [];
       this.total_work_type = 0;
+      this.province_length = 0;
+
+      this.work_type.forEach((element, i) => {
+        this.work_type[i].total = 0;
+      });
 
       fetch("/data/" + year + "/nation-wide.json")
         .then((response) => response.json())
