@@ -20,10 +20,10 @@
           อัพเดตข้อมูลเมื่อ
           {{
             new Date(updatedAt).getDate() +
-              "/" +
-              (new Date(updatedAt).getMonth() + 1) +
-              "/" +
-              (new Date(updatedAt).getFullYear() + 543)
+            "/" +
+            (new Date(updatedAt).getMonth() + 1) +
+            "/" +
+            (new Date(updatedAt).getFullYear() + 543)
           }}
         </p>
         <div class="d-flex justify-content-lg-center mt-3">
@@ -88,12 +88,7 @@
             </template>
             <div class="text-1 bg-white tab-wrapper black">
               <div
-                class="
-                  d-flex
-                  flex-wrap flex-column flex-md-row
-                  justify-content-center
-                  px-2 px-sm-0
-                "
+                class="d-flex flex-wrap flex-column flex-md-row justify-content-center px-2 px-sm-0"
               >
                 <div
                   class="d-flex mx-1"
@@ -105,7 +100,11 @@
                     :style="{ backgroundColor: item.color }"
                   ></div>
                   <p class="text-3 mr-1">
-                    {{ ((item.total / total_nationwide) * 100).toFixed(2) }}%
+                    {{
+                      item.total == 0
+                        ? 0
+                        : ((item.total / total_nationwide) * 100).toFixed(2)
+                    }}%
                   </p>
                   <p class="text-3 font-weight-bold">{{ item.name }}</p>
                 </div>
@@ -125,7 +124,7 @@
                               2
                             ) + '%'
                           : '1%',
-                      minWidth: '10px'
+                      minWidth: '10px',
                     }"
                     class="w-100"
                     :key="'work-type-' + i"
@@ -134,10 +133,10 @@
                       @click="selectWorkPlan(item2.plan, i)"
                       class="work-type-square big w-100 mr-2"
                       :style="{
-                        backgroundColor: item2.color
+                        backgroundColor: item2.color,
                       }"
                       :class="{
-                        hovered: selected_work_plan == i
+                        hovered: selected_work_plan == i,
                       }"
                     >
                       <h5
@@ -153,7 +152,10 @@
                 </template>
               </div>
 
-              <p class="text-3 text-center mt-5">
+              <p
+                class="text-3 text-center mt-5"
+                v-if="groupedByAreaSlide.length > 0"
+              >
                 รายละเอียด
                 {{ total_work_type }}
                 แผน
@@ -170,7 +172,7 @@
                     v-for="(item, i) in groupedByAreaSlide"
                     :key="'slide-' + i"
                     :style="{
-                      backgroundColor: item.color
+                      backgroundColor: item.color,
                     }"
                     :class="{ 'white-b': item.color == '#4A4E5E' }"
                   >
@@ -228,6 +230,9 @@
                   </div>
                 </VueSlickCarousel>
               </div>
+              <div v-else>
+                <h2 class="header-2 text-center py-5">ไม่พบข้อมูล</h2>
+              </div>
             </div>
           </b-tab>
           <b-tab
@@ -266,12 +271,8 @@
             </template>
             <div class="text-1 bg-white tab-wrapper black">
               <div
-                class="
-                  d-flex
-                  flex-wrap flex-column flex-sm-row
-                  justify-content-center
-                  px-2 px-sm-0
-                "
+                v-if="groupedByType != null"
+                class="d-flex flex-wrap flex-column flex-sm-row justify-content-center px-2 px-sm-0"
               >
                 <div
                   class="d-flex mx-1"
@@ -283,13 +284,21 @@
                     :style="{ backgroundColor: item.color }"
                   ></div>
                   <p class="text-3 mr-1">
-                    {{ ((item.total / total_nationwide) * 100).toFixed(2) }}%
+                    {{
+                      item.total == 0
+                        ? 0
+                        : ((item.total / total_nationwide) * 100).toFixed(2)
+                    }}%
                   </p>
                   <p class="text-3 font-weight-bold">{{ item.type }}</p>
                 </div>
               </div>
 
-              <div class="d-flex w-100 overflow-hidden" id="work-type-slide">
+              <div
+                class="d-flex w-100 overflow-hidden"
+                id="work-type-slide"
+                v-if="groupedByType != null"
+              >
                 <div
                   v-for="(item3, j) in groupedByType"
                   :style="{
@@ -299,12 +308,12 @@
                         ? ((item3.total / total_nationwide) * 100).toFixed(2) +
                           '%'
                         : '1%',
-                    minWidth: '10px'
+                    minWidth: '10px',
                   }"
                   class="w-100"
                   :class="{
                     'white-b':
-                      item3.color == '#253472' || item3.color == '#A80C7C'
+                      item3.color == '#253472' || item3.color == '#A80C7C',
                   }"
                   :key="'type-' + j"
                 >
@@ -312,10 +321,10 @@
                     @click="selectWorkType(item3.type)"
                     class="work-type-square big w-100 mr-2"
                     :style="{
-                      backgroundColor: item3.color
+                      backgroundColor: item3.color,
                     }"
                     :class="{
-                      hovered: selected_work_type == j
+                      hovered: selected_work_type == j,
                     }"
                     :key="j"
                   >
@@ -326,18 +335,18 @@
                 </div>
               </div>
 
-              <p class="text-3 text-center mt-5">
+              <p class="text-3 text-center mt-5" v-if="groupedByType != null">
                 รายละเอียด
                 {{ groupedByType.length }}
                 ประเภท
               </p>
 
-              <div>
+              <div v-if="groupedByType != null">
                 <VueSlickCarousel
                   v-bind="slickOptions"
                   class="work-card-wrapper work-card-type-wrapper"
                   ref="worktype"
-                  v-if="groupedByType.length > 0"
+                  v-if="groupedByType > 0"
                   @beforeChange="getIndexWorkType"
                 >
                   <div
@@ -345,11 +354,11 @@
                     v-for="(item, i) in groupedByType"
                     :key="'slide-' + i"
                     :style="{
-                      backgroundColor: item.color
+                      backgroundColor: item.color,
                     }"
                     :class="{
                       'white-b':
-                        item.color == '#253472' || item.color == '#A80C7C'
+                        item.color == '#253472' || item.color == '#A80C7C',
                     }"
                   >
                     <p class="text-1 font-weight-bold m-0 d-block d-lg-none">
@@ -412,6 +421,9 @@
                   </div>
                 </VueSlickCarousel>
               </div>
+              <div v-else>
+                <h2 class="header-2 text-center py-5">ไม่พบข้อมูล</h2>
+              </div>
             </div>
           </b-tab>
         </b-tabs>
@@ -466,7 +478,7 @@
                 :src="info"
                 v-if="
                   activetab_province == 'สำรวจผ่านโครงสร้าง' &&
-                    selected_province != ''
+                  selected_province != ''
                 "
                 class="info"
                 alt=""
@@ -577,14 +589,7 @@
         />
       </div>
       <div
-        class="
-          p-3
-          grid-wrapper
-          min-h-screen
-          d-flex
-          justify-content-center
-          align-items-center
-        "
+        class="p-3 grid-wrapper min-h-screen d-flex justify-content-center align-items-center"
       >
         <div class="content text-2 white-b text-center">
           <p class="text-1 font-weight-bold">
@@ -623,13 +628,7 @@
         </div>
       </div>
       <div
-        class="
-          h-100vh
-          choose-wrapper
-          d-flex
-          flex-column
-          justify-content-between
-        "
+        class="h-100vh choose-wrapper d-flex flex-column justify-content-between"
       >
         <div
           class="px-3 d-flex justify-content-center align-items-center h-100"
@@ -765,7 +764,7 @@ export default {
         { name: "ด้านบริหารทั่วไป", color: "#F2A8EE", total: 0, plans: [] },
         { name: "ด้านบริการชุมชน", color: "#89E26A", total: 0, plans: [] },
         { name: "ด้านเศรษฐกิจ", color: "#FF8540", total: 0, plans: [] },
-        { name: "ด้านการดำเนินงานอื่น", color: "#4A4E5E", total: 0, plans: [] }
+        { name: "ด้านการดำเนินงานอื่น", color: "#4A4E5E", total: 0, plans: [] },
       ],
       keyword: [
         {
@@ -781,8 +780,8 @@ export default {
             "ระบบประปา",
             "ท่อระบายน้ำ",
             "ฝายน้ำ",
-            "ลำห้วย"
-          ]
+            "ลำห้วย",
+          ],
         },
         {
           id: 2,
@@ -796,8 +795,8 @@ export default {
             "เครื่องออกกำลังกาย",
             "อุปกรณ์การเรียน",
             "อุปกรณ์กีฬา",
-            "เครื่องมือการช่าง"
-          ]
+            "เครื่องมือการช่าง",
+          ],
         },
         {
           id: 3,
@@ -818,8 +817,8 @@ export default {
             "ศิลปะ",
             "พระราชพิธี",
             "ประเพณี",
-            "อนุรักษ์ธรรมชาติ"
-          ]
+            "อนุรักษ์ธรรมชาติ",
+          ],
         },
         {
           id: 4,
@@ -837,8 +836,8 @@ export default {
             "ประมง",
             "เกษตรกร",
             "นักกีฬา",
-            "ผู้ด้อยโอกาส"
-          ]
+            "ผู้ด้อยโอกาส",
+          ],
         },
 
         {
@@ -856,8 +855,8 @@ export default {
             "ตลาด",
             "โรงฆ่าสัตว์",
             "สถานีขนส่ง",
-            "ท่าเรือ"
-          ]
+            "ท่าเรือ",
+          ],
         },
 
         {
@@ -873,8 +872,8 @@ export default {
             "กิจกรรมส่งเสริมอาชีพ",
             "ป้องกันยาเสพติด",
             "ปรับปรุงภูมิทัศน์",
-            "ป้องกันมลพิษ"
-          ]
+            "ป้องกันมลพิษ",
+          ],
         },
         {
           id: 7,
@@ -892,9 +891,9 @@ export default {
             "กองทุนบำเหน็จบำนาญ",
             "กองทุนสำรองเลี้ยงชีพ",
             "สงเคราะห์ผู้ป่วยยากไร้",
-            "เงินช่วยพิเศษ"
-          ]
-        }
+            "เงินช่วยพิเศษ",
+          ],
+        },
       ],
       info: require("~/assets/images/info.svg"),
       drag: require("~/assets/images/drag.svg"),
@@ -918,77 +917,65 @@ export default {
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
+              slidesToShow: 1,
+            },
+          },
+        ],
       },
       work_type_desc: [
         {
           title: "แผนงานบริหารงานทั่วไป",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับการบริหารจัดการทั่วไป ภายในองค์กรของ อบจ. เช่น เงินเดือนพนักงาน เงินสำหรับใช้จ่ายสิ่งวัสดุอุปกรณ์ต่าง ๆ ขององค์กร เงินจัดกิจกรรมเพื่อพัฒนาศักยภาพภายในองค์กร เป็นต้น"
+          desc: "งบประมาณที่เกี่ยวข้องกับการบริหารจัดการทั่วไป ภายในองค์กรของ อบจ. เช่น เงินเดือนพนักงาน เงินสำหรับใช้จ่ายสิ่งวัสดุอุปกรณ์ต่าง ๆ ขององค์กร เงินจัดกิจกรรมเพื่อพัฒนาศักยภาพภายในองค์กร เป็นต้น",
         },
         {
           title: "แผนงานการรักษาความสงบภายใน",
-          desc: "งบประมาณที่เกี่ยวข้องกับการป้องกันสาธารณภัย"
+          desc: "งบประมาณที่เกี่ยวข้องกับการป้องกันสาธารณภัย",
         },
         {
           title: "แผนงานการศึกษา",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับการศึกษา ทั้งส่วนที่เกี่ยวข้องกับครู นักเรียน บุคลากรในสถานศึกษา โรงเรียนตั้งแต่ชั้นอนุบาลถึงมัธยม ไปจนถึงกิจกรรมพัฒนาทักษะและศักยภาพต่าง ๆ ของทั้งครูและนักเรียน"
+          desc: "งบประมาณที่เกี่ยวข้องกับการศึกษา ทั้งส่วนที่เกี่ยวข้องกับครู นักเรียน บุคลากรในสถานศึกษา โรงเรียนตั้งแต่ชั้นอนุบาลถึงมัธยม ไปจนถึงกิจกรรมพัฒนาทักษะและศักยภาพต่าง ๆ ของทั้งครูและนักเรียน",
         },
         {
           title: "แผนงานสาธารณสุข",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับด้านสาธารณสุขทั้งหมด ส่วนใหญ่เป็นภารกิจของโรงพยาบาล และศูนย์ส่งเสริมสุขภาพ ไม่ว่าจะเป็นเรื่อง ป้องกันโรคระบาด หรือ บำบัดปัญหายาเสพติด"
+          desc: "งบประมาณที่เกี่ยวข้องกับด้านสาธารณสุขทั้งหมด ส่วนใหญ่เป็นภารกิจของโรงพยาบาล และศูนย์ส่งเสริมสุขภาพ ไม่ว่าจะเป็นเรื่อง ป้องกันโรคระบาด หรือ บำบัดปัญหายาเสพติด",
         },
         {
           title: "แผนงานสังคมสงเคราะห์",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับภารกิจให้ความช่วยเหลือ เด็กนักเรียนด้อยโอกาส คนพิการ หรือ กลุ่มผู้สูงอายุ"
+          desc: "งบประมาณที่เกี่ยวข้องกับภารกิจให้ความช่วยเหลือ เด็กนักเรียนด้อยโอกาส คนพิการ หรือ กลุ่มผู้สูงอายุ",
         },
         {
           title: "แผนงานเคหะและชุมชน",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับงานด้านวิศวกรรม โครงสร้างพื้นฐาน เสาไฟฟ้า รวมไปถึงการบริหารจัดการสวนสาธารณะ และการจัดเก็บขยะ"
+          desc: "งบประมาณที่เกี่ยวข้องกับงานด้านวิศวกรรม โครงสร้างพื้นฐาน เสาไฟฟ้า รวมไปถึงการบริหารจัดการสวนสาธารณะ และการจัดเก็บขยะ",
         },
         {
           title: "แผนงานสร้างความเข้มแข็งของชุมชน",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับคุณภาพชีวิตโดยภาพรวมของคนในจังหวัด เช่น การส่งเสริมด้านอาชีพ การให้ความรู้เกี่ยวกับอาชีพ ไปจนถึงการพัฒนาคุณภาพชีวิตของผู้ด้อยโอกาส คนพิการ ผู้สูงอายุ ฯลฯ"
+          desc: "งบประมาณที่เกี่ยวข้องกับคุณภาพชีวิตโดยภาพรวมของคนในจังหวัด เช่น การส่งเสริมด้านอาชีพ การให้ความรู้เกี่ยวกับอาชีพ ไปจนถึงการพัฒนาคุณภาพชีวิตของผู้ด้อยโอกาส คนพิการ ผู้สูงอายุ ฯลฯ",
         },
         {
           title: "แผนงานการศาสนา วัฒนธรรมและนันทนาการ",
-          desc:
-            "งบประมาณที่สนับสนุนให้ กีฬา นันทนาการ พิธีการต่าง ๆ พระราชพิธี วันสำคัญทางศาสนา รวมไปถึงการท่องเที่ยว ฯลฯ"
+          desc: "งบประมาณที่สนับสนุนให้ กีฬา นันทนาการ พิธีการต่าง ๆ พระราชพิธี วันสำคัญทางศาสนา รวมไปถึงการท่องเที่ยว ฯลฯ",
         },
         {
           title: "แผนงานอุตสาหกรรมและการโยธา",
-          desc:
-            "งบประมาณที่ใช้จ่ายหลัก ๆ ไปกับงานด้านผังเมือง การสร้าง บูรณะ ถนนและพื้นผิวจราจร"
+          desc: "งบประมาณที่ใช้จ่ายหลัก ๆ ไปกับงานด้านผังเมือง การสร้าง บูรณะ ถนนและพื้นผิวจราจร",
         },
         {
           title: "แผนงานการเกษตร",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับกิจกรรม ซึ่งเกี่ยวกับ การเกษตร เกษตรกร รวมถึงการอนุรักษ์และฟื้นฟูทรัพยากร ทางธรรมชาติ"
+          desc: "งบประมาณที่เกี่ยวข้องกับกิจกรรม ซึ่งเกี่ยวกับ การเกษตร เกษตรกร รวมถึงการอนุรักษ์และฟื้นฟูทรัพยากร ทางธรรมชาติ",
         },
         {
           title: "แผนงานการพาณิชย์",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับโรงรับจำนำ การประปา ตลาดสด โรงฆ่าสัตว์ รวมถึงทรัพยากรทางทะเล ซึ่งเป็นแผนงานที่ไม่ได้ปรากฏ อยู่ในบทบัญญัติรายจ่ายของทุกจังหวัด"
+          desc: "งบประมาณที่เกี่ยวข้องกับโรงรับจำนำ การประปา ตลาดสด โรงฆ่าสัตว์ รวมถึงทรัพยากรทางทะเล ซึ่งเป็นแผนงานที่ไม่ได้ปรากฏ อยู่ในบทบัญญัติรายจ่ายของทุกจังหวัด",
         },
         {
           title: "แผนงานงบกลาง",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับรายการอื่น ๆ นอกเหนือจากภาระหน้าที่หลัก เช่น ชำระหนี้ สมทบประกันสังคม เข้ากองทุน เงินบำเหน็จบำนาญ เงินสำรองจ่าย หรือ เงินช่วยเหลือพิเศษ ฯลฯ"
+          desc: "งบประมาณที่เกี่ยวข้องกับรายการอื่น ๆ นอกเหนือจากภาระหน้าที่หลัก เช่น ชำระหนี้ สมทบประกันสังคม เข้ากองทุน เงินบำเหน็จบำนาญ เงินสำรองจ่าย หรือ เงินช่วยเหลือพิเศษ ฯลฯ",
         },
         {
           title: "แผนงานงบกลาง",
-          desc:
-            "งบประมาณที่เกี่ยวข้องกับรายการอื่น ๆ นอกเหนือจากภาระหน้าที่หลัก เช่น ชำระหนี้ สมทบประกันสังคม เข้ากองทุน เงินบำเหน็จบำนาญ เงินสำรองจ่าย หรือ เงินช่วยเหลือพิเศษ ฯลฯ"
-        }
-      ]
+          desc: "งบประมาณที่เกี่ยวข้องกับรายการอื่น ๆ นอกเหนือจากภาระหน้าที่หลัก เช่น ชำระหนี้ สมทบประกันสังคม เข้ากองทุน เงินบำเหน็จบำนาญ เงินสำรองจ่าย หรือ เงินช่วยเหลือพิเศษ ฯลฯ",
+        },
+      ],
     };
   },
   watch: {
@@ -1002,7 +989,7 @@ export default {
       if (this.activetab_province == "สำรวจผ่านโครงสร้าง")
         this.activetab_province_index = 0;
       else this.activetab_province_index = 1;
-    }
+    },
   },
   mounted() {
     this.setProvince(new Date().getFullYear() + 543);
@@ -1015,21 +1002,23 @@ export default {
       this.selected_year_province = y;
       this.selected_province = "";
       fetch("/data/metadata.json")
-        .then(response => response.json())
-        .then(data => {
-          data.provincesByYears[y].sort((a, b) => a.localeCompare(b));
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.provincesByYears[y] != null)
+            data.provincesByYears[y].sort((a, b) => a.localeCompare(b));
 
           if (this.provinces.length == 0) {
             this.provinces.push({ value: "", text: "เลือกจังหวัด" });
 
-            data.provincesByYears[y].forEach(element => {
-              this.provinces.push({ value: element, text: element });
-            });
+            if (data.provincesByYears[y] != null) {
+              data.provincesByYears[y].forEach((element) => {
+                this.provinces.push({ value: element, text: element });
+              });
+            }
           }
         });
 
       var province_url = decodeURI(window.location.href).split("?province=");
-
       if (province_url[1] != null) this.selected_province = province_url[1];
     },
     getNationWideData(year) {
@@ -1037,69 +1026,85 @@ export default {
       this.total_work_type = 0;
 
       fetch("/data/" + year + "/nation-wide.json")
-        .then(response => response.json())
-        .then(data => {
-          this.total_nationwide = data.total;
-          this.groupedByArea = data.groupedByArea;
-          this.groupedByType = data.groupedByType;
+        .then((response) => response.json())
+        .then((data) => {
+          if (data != null) {
+            this.total_nationwide = data.total;
+            this.groupedByArea = data.groupedByArea;
+            this.groupedByType = data.groupedByType;
 
-          let result = this.groupedByArea.map(a => a.plans);
+            if (this.groupedByArea.length > 0) {
+              let result = this.groupedByArea.map((a) => a.plans);
 
-          this.work_type.forEach((element, i) => {
-            this.work_type[i].plans = result[i];
-            this.work_type[i].total = this.groupedByArea[i].total;
-          });
+              this.work_type.forEach((element, i) => {
+                this.work_type[i].plans = result[i];
+                this.work_type[i].total = this.groupedByArea[i].total;
+              });
 
-          this.work_type.map((x, i, ref) => {
-            x.plans.map(y => {
-              y.color = x.color;
-            });
-          });
+              this.work_type.map((x, i, ref) => {
+                x.plans.map((y) => {
+                  y.color = x.color;
+                });
+              });
 
-          result.forEach(element => {
-            this.total_work_type += element.length;
+              result.forEach((element) => {
+                this.total_work_type += element.length;
 
-            element.forEach(element2 => {
-              this.groupedByAreaSlide.push(element2);
-            });
-          });
+                element.forEach((element2) => {
+                  this.groupedByAreaSlide.push(element2);
+                });
+              });
 
-          let bg = "";
+              let bg = "";
 
-          this.groupedByType.map((x, i, ref) => {
-            if (x.type == "งบบุคลากร") bg = "#208FDF";
-            else if (x.type == "งบดำเนินงาน") bg = "#EC6440";
-            else if (x.type == "งบลงทุน") bg = "#F1E6D7";
-            else if (x.type == "งบเงินอุดหนุน") bg = "#253472";
-            else if (x.type == "งบกลาง") bg = "#FFB930";
-            else bg = "#A80C7C";
-            x.id = i + 1;
-            x.color = bg;
-          });
+              this.groupedByType.map((x, i, ref) => {
+                if (x.type == "งบบุคลากร") bg = "#208FDF";
+                else if (x.type == "งบดำเนินงาน") bg = "#EC6440";
+                else if (x.type == "งบลงทุน") bg = "#F1E6D7";
+                else if (x.type == "งบเงินอุดหนุน") bg = "#253472";
+                else if (x.type == "งบกลาง") bg = "#FFB930";
+                else bg = "#A80C7C";
+                x.id = i + 1;
+                x.color = bg;
+              });
 
-          this.groupedByType.sort(function(a, b) {
-            return b.total - a.total;
-          });
+              this.groupedByType.sort(function (a, b) {
+                return b.total - a.total;
+              });
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error);
         });
 
       fetch("/data/metadata.json")
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           this.updatedAt = data.updatedAt;
 
           if (this.options.length == 0) {
-            data.years.forEach(element => {
+            data.years.forEach((element) => {
               this.options.push({ value: element, text: element });
             });
           }
+
+          var current_year = this.options.filter(
+            (x) => x.value == new Date().getFullYear() + 543
+          );
+          if (current_year.length == 0)
+            this.options.push({
+              value: new Date().getFullYear() + 543,
+              text: new Date().getFullYear() + 543,
+            });
 
           this.province_length = data.provincesByYears[this.selected].length;
         });
     },
     getProvinceData(y, p) {
       fetch("/data/" + y + "/pao-" + p + ".json")
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           this.tasks = data.tasks;
           this.total_province = data.total;
           this.budgetingDocUrl = data.pao.budgetingDocUrl;
@@ -1114,13 +1119,13 @@ export default {
       this.selected_keyword = text;
 
       fetch("/data/keywords.json")
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           let a = Object.entries(data);
-          let b = a.filter(x => x[0] == text);
-          b[0][1].forEach(element => {
+          let b = a.filter((x) => x[0] == text);
+          b[0][1].forEach((element) => {
             let c = this.tasks.filter(
-              x =>
+              (x) =>
                 x.plan == element.plan &&
                 x.task == element.task &&
                 x.type == element.type
@@ -1137,12 +1142,12 @@ export default {
       this.$refs["kw-modal"].show();
     },
     selectWorkPlan(index) {
-      const i = this.groupedByAreaSlide.map(e => e.plan).indexOf(index);
+      const i = this.groupedByAreaSlide.map((e) => e.plan).indexOf(index);
       this.$refs.workplan.goTo(i);
       document.getElementById("work-plan-slide").scrollIntoView();
     },
     selectWorkType(index) {
-      const i = this.groupedByType.map(e => e.type).indexOf(index);
+      const i = this.groupedByType.map((e) => e.type).indexOf(index);
       this.$refs.worktype.goTo(i);
       document.getElementById("work-type-slide").scrollIntoView();
     },
@@ -1151,8 +1156,8 @@ export default {
     },
     getIndexWorkType(currentSlide, nextSlide) {
       this.selected_work_type = nextSlide;
-    }
-  }
+    },
+  },
 };
 </script>
 
