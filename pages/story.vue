@@ -38,8 +38,10 @@
             <div class="text-1 text-step-2 text-center">
               <b>องค์กรปกครองส่วนท้องถิ่น หรือ อบจ.</b> <br />
               <p class="m-0 text-1">
-              เป็นองค์กรปกครองส่วนท้องถิ่นที่มีขนาดใหญ่ที่สุด
-              และมีเขตพื้นที่รับผิดชอบครอบคลุมทั่วทั้งจังหวัดก่อตั้งขึ้นเพื่อจัดหาบริการสาธารณประโยชน์ต่าง ๆ ให้แก่ประชาชนในแต่ละจังหวัด</p>
+                เป็นองค์กรปกครองส่วนท้องถิ่นที่มีขนาดใหญ่ที่สุด
+                และมีเขตพื้นที่รับผิดชอบครอบคลุมทั่วทั้งจังหวัดก่อตั้งขึ้นเพื่อจัดหาบริการสาธารณประโยชน์ต่าง
+                ๆ ให้แก่ประชาชนในแต่ละจังหวัด
+              </p>
             </div>
           </div>
           <div class="step" data-step-no="3">
@@ -93,35 +95,14 @@
           </div>
         </div>
         <div
-          class="
-            story-intro-2
-            px-2
-            d-flex
-            flex-column flex-lg-row
-            justify-content-center
-            align-items-center
-          "
+          class="story-intro-2 px-2 d-flex flex-column flex-lg-row justify-content-center align-items-center"
         >
           <div
-            class="
-              position-relative
-              story-intro-content-1
-              d-flex
-              justify-content-end
-            "
+            class="position-relative story-intro-content-1 d-flex justify-content-end"
           >
             <div>
               <div
-                class="
-                  circle
-                  bg-orange-a
-                  text-2
-                  d-flex
-                  justify-content-center
-                  align-items-center
-                  text-center
-                  font-weight-bold
-                "
+                class="circle bg-orange-a text-2 d-flex justify-content-center align-items-center text-center font-weight-bold"
               >
                 ก่อน<br />จัดสรรงบ
               </div>
@@ -129,7 +110,8 @@
                 <p class="text-2 text-center">
                   เราเรียกขั้นตอนนี้ว่า
                   <span class="orange-a">Participatory Budgeting</span>
-                  แต่ในความเป็นจริง สำหรับประเทศไทยแนวคิดการจัดสรรงบประมาณแบบมีส่วนร่วมลักษณะนี้อาจยังไม่ประสบความสำเร็จ
+                  แต่ในความเป็นจริง
+                  สำหรับประเทศไทยแนวคิดการจัดสรรงบประมาณแบบมีส่วนร่วมลักษณะนี้อาจยังไม่ประสบความสำเร็จ
                   หรือเห็นภาพได้ชัดเนื่องจากข้อจำกัดหลายอย่าง
                 </p>
               </div>
@@ -141,16 +123,7 @@
           <div class="position-relative story-intro-content-2">
             <div>
               <div
-                class="
-                  circle
-                  bg-light-blue
-                  text-2
-                  d-flex
-                  justify-content-center
-                  align-items-center
-                  text-center
-                  font-weight-bold
-                "
+                class="circle bg-light-blue text-2 d-flex justify-content-center align-items-center text-center font-weight-bold"
               >
                 หลัง<br />จัดสรรงบ
               </div>
@@ -272,7 +245,8 @@
           เพื่อความโปร่งใส
           หลายประเทศได้มีการนำข้อมูลเกี่ยวกับการจัดสรรงบประมาณของภาครัฐมาเผยแพร่ให้ประชาชนทั่วไปได้รับรู้
           และสามารถนำข้อมูลเหล่านั้นมาวิเคราะห์ต่อยอด
-          หรือแม้กระทั่งเปลี่ยนให้เป็นชาร์ตรูปแบบต่าง ๆ ที่ประชาชนสามารถกดสำรวจเองได้
+          หรือแม้กระทั่งเปลี่ยนให้เป็นชาร์ตรูปแบบต่าง ๆ
+          ที่ประชาชนสามารถกดสำรวจเองได้
         </p>
 
         <div
@@ -295,13 +269,7 @@
               </ul>
               <div class="link-box-white">
                 <a
-                  class="
-                    header-5
-                    white-a
-                    link-white
-                    d-flex
-                    justify-content-between
-                  "
+                  class="header-5 white-a link-white d-flex justify-content-between"
                   href="https://www.usaspending.gov/"
                   target="_blank"
                 >
@@ -317,19 +285,13 @@
                 <li>ทั้งในรูปแบบ PDF HTML รวมถึง Excel Spreadsheet</li>
                 <li>
                   สามารถส่งคำร้องขอเอกสารงบ ใน format ต่าง ๆ
-                  ด้วยโปรแกรมหรือเทคโนโลยีรูป<span class="nowrap">แบบ</span
-                  >อื่น ๆ
+                  ด้วยโปรแกรมหรือเทคโนโลยีรูป<span class="nowrap">แบบ</span>อื่น
+                  ๆ
                 </li>
               </ul>
               <div class="link-box-black">
                 <a
-                  class="
-                    header-5
-                    black
-                    link-black
-                    d-flex
-                    justify-content-between
-                  "
+                  class="header-5 black link-black d-flex justify-content-between"
                   href="https://www.gov.uk/"
                   target="_blank"
                 >
@@ -354,13 +316,7 @@
               </ul>
               <div class="link-box-white">
                 <a
-                  class="
-                    header-5
-                    white-a
-                    link-white
-                    d-flex
-                    justify-content-between
-                  "
+                  class="header-5 white-a link-white d-flex justify-content-between"
                   href="https://transparencia.gov.br/"
                   target="_blank"
                 >
@@ -425,26 +381,11 @@
         </div>
       </div>
       <div
-        class="
-          bg-lime
-          h-100vh
-          symbol-wrapper
-          d-flex
-          justify-content-center
-          align-items-center
-        "
+        class="bg-lime h-100vh symbol-wrapper d-flex justify-content-center align-items-center"
       >
         <div>
           <div
-            class="
-              bg-blue-a
-              white-a
-              symbol-header
-              header-4
-              font-weight-bold
-              text-center
-              mb-5
-            "
+            class="bg-blue-a white-a symbol-header header-4 font-weight-bold text-center mb-5"
           >
             แต่เรามีข่าวดี!!
           </div>
@@ -460,8 +401,7 @@
       <div class="bg-grid-blue text-center px-3">
         <div class="bg-black text-1 white-a grid-header">
           หากยังไม่มีธงในใจว่าต้องการเจาะจงตรวจสอบตรงจุดไหน
-          อาจเริ่มจากการไล่ดูงบประมาณที่เกี่ยวข้องกับความเป็นอยู่ของเราก่อน
-          เช่น
+          อาจเริ่มจากการไล่ดูงบประมาณที่เกี่ยวข้องกับความเป็นอยู่ของเราก่อน เช่น
         </div>
       </div>
       <div class="work-category text-center">
@@ -491,22 +431,10 @@
         <hr class="m-0" />
       </div>
       <div
-        class="
-          h-100vh
-          choose-wrapper
-          d-flex
-          flex-column
-          justify-content-between
-        "
+        class="h-100vh choose-wrapper d-flex flex-column justify-content-between"
       >
         <div
-          class="
-            px-3
-            d-flex
-            justify-content-center
-            align-items-center
-            h-100
-          "
+          class="px-3 d-flex justify-content-center align-items-center h-100"
         >
           <div>
             <div class="header-box mb-5">
@@ -629,7 +557,7 @@ export default {
   },
   mounted() {
     var width = window.screen.width;
-    //console.log(width);
+
     if (width > 768) {
       this.img2 = 0;
       this.img3 = 0;
@@ -641,10 +569,12 @@ export default {
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
     document.getElementById("img-1").style.bottom = 0;
     setTimeout(() => {
-      document.getElementById("img-2").style.bottom = width > 600 ? 50 - this.img2 + "px" : "15px";
+      document.getElementById("img-2").style.bottom =
+        width > 600 ? 50 - this.img2 + "px" : "15px";
     }, 1000);
     setTimeout(() => {
-      document.getElementById("img-3").style.bottom = width > 600 ? 40 - this.img3 + "px" : "10px";
+      document.getElementById("img-3").style.bottom =
+        width > 600 ? 40 - this.img3 + "px" : "10px";
       document.getElementById("arrowdown").style.opacity = 1;
       document.getElementsByTagName("body")[0].style.overflow = "unset";
       this.isFirstTime = false;
@@ -677,14 +607,18 @@ export default {
         if (!this.isFirstTime) {
           document.getElementById("img-2").style.transform = "none";
           document.getElementById("img-3").style.transform = "none";
-          document.getElementById("img-2").style.bottom = width > 600 ? 50 - this.img2 + "px" : "15px";
-          document.getElementById("img-3").style.bottom = width > 600 ? 40 - this.img3 + "px" : "10px";
+          document.getElementById("img-2").style.bottom =
+            width > 600 ? 50 - this.img2 + "px" : "15px";
+          document.getElementById("img-3").style.bottom =
+            width > 600 ? 40 - this.img3 + "px" : "10px";
         }
       } else if (index == 1) {
         document.getElementById("img-2").style.transform = "scale(2)";
         document.getElementById("img-3").style.transform = "scale(2.5)";
-        document.getElementById("img-2").style.bottom = width > 600 ? 155 - this.img2 + "px" : "50px";
-        document.getElementById("img-3").style.bottom = width > 600 ? 85 - this.img3 + "px" : "30px";
+        document.getElementById("img-2").style.bottom =
+          width > 600 ? 155 - this.img2 + "px" : "50px";
+        document.getElementById("img-3").style.bottom =
+          width > 600 ? 85 - this.img3 + "px" : "30px";
       }
 
       if (index == 4) {
@@ -708,8 +642,8 @@ export default {
   },
 };
 </script>
-  
-  <style lang="scss" scoped>
+
+<style lang="scss" scoped>
 .wrapper {
   background-image: url("~/assets/images/sky.png");
   background-size: cover;
@@ -822,7 +756,7 @@ export default {
   max-width: 946px;
   margin: auto;
   transform: scale(2);
-    bottom: 190px;
+  bottom: 190px;
   z-index: 5;
   transition: 0.5s;
   opacity: 0;
@@ -1174,7 +1108,8 @@ export default {
     margin: auto;
 
     @media #{$mq-mobile} {
-      position: unset;     padding: 10px;
+      position: unset;
+      padding: 10px;
     }
   }
 

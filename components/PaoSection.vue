@@ -1432,7 +1432,6 @@ export default {
             .slice(0, 5);
 
           if (this.pao.chiefExecutives.length > 0) {
-            //console.log(this.pao.chiefExecutives[0].ownAccount);
             if (this.pao.chiefExecutives[0].ownAccount != null) {
               for (const property in this.pao.chiefExecutives[0].ownAccount) {
                 this.acc_data.push(

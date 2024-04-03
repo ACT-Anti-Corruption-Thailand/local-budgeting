@@ -13,7 +13,7 @@
     },
     {
       "area": "ด้านบริการชุมชนและสังคม",
-      "total": 186276900,
+      "total": 14607900,
       "plans": [
         {
           "plan": "การศึกษา",
@@ -38,7 +38,13 @@
         {
           "plan": "การศาสนา วัฒนธรรม และนันทนาการ",
           "total": 1840000
-        },
+        }
+      ]
+    },
+    {
+      "area": "ด้านการเศรษฐกิจ",
+      "total": 171669000,
+      "plans": [
         {
           "plan": "อุตสาหกรรมและการโยธา",
           "total": 171669000
@@ -260,14 +266,14 @@
     },
     {
       "task": "ก่อสร้าง",
-      "area": "ด้านบริการชุมชนและสังคม",
+      "area": "ด้านการเศรษฐกิจ",
       "plan": "อุตสาหกรรมและการโยธา",
       "type": "งบดำเนินงาน",
       "total": 6200000
     },
     {
       "task": "ก่อสร้าง",
-      "area": "ด้านบริการชุมชนและสังคม",
+      "area": "ด้านการเศรษฐกิจ",
       "plan": "อุตสาหกรรมและการโยธา",
       "type": "งบลงทุน",
       "total": 165469000
@@ -330,7 +336,7 @@
         ]
       }
     ],
-    "population": 0,
+    "population": 272166,
     "chiefExecutives": [
       {
         "name": "นาย สุรเชษ นิ่มกุล",
@@ -359,7 +365,7 @@
         "fillingUrl": "https://drive.google.com/drive/folders/10oWP00C-DZZMEP0mU65d7ViIgGa4R5Dl?usp=sharing"
       }
     ],
-    "budgetingDocUrl": "",
+    "budgetingDocUrl": "https://drive.google.com/file/d/1n-6sjPYPOqwH9NvmETsiquL5R_wEsVZ-/view?usp=drive_link",
     "actAiUrl": "https://tinyurl.com/y7nr5qnf"
   }
 }

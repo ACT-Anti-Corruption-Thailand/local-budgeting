@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localbudgeting.actai.co/'
+const BASE_URL = "http://localbudgeting.actai.co/";
 const array = [];
 for (var i = 0; i < 51; i++) {
   for (var j = 0; j < 51; j++) {
@@ -9,72 +9,82 @@ for (var i = 0; i < 51; i++) {
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
-  target: 'static',
+  target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้',
+    title: "ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้",
     htmlAttrs: {
-      lang: 'en'
+      lang: "en",
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' },
-      { hid: 'description', name: 'description', content: 'ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้' },
-      { name: 'format-detection', content: 'telephone=no' },
+      { charset: "utf-8" },
       {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้ '
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
+        name: "viewport",
         content:
-          'ร่วมกันตรวจสอบงบประมาณรายจ่ายของ อบจ. บ้านเรา และทำให้งบประมาณเมืองเป็นเรื่องที่ทุกคนตรวจสอบได้'
+          "width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1",
       },
       {
-        hid: 'og:type',
-        property: 'og:type',
-        content: 'website'
+        hid: "description",
+        name: "description",
+        content: "ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้",
+      },
+      { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้ ",
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "ร่วมกันตรวจสอบงบประมาณรายจ่ายของ อบจ. บ้านเรา และทำให้งบประมาณเมืองเป็นเรื่องที่ทุกคนตรวจสอบได้",
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: "website",
       },
       {
         hid: "og-image",
         property: "og:image",
-        content:
-          BASE_URL + 'og_image.png'
+        content: BASE_URL + "og_image.png",
       },
       {
         hid: "twitter:image",
         name: "twitter:image:src",
+        content: BASE_URL + "og_image.png",
+      },
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: "ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้ ",
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
         content:
-          BASE_URL + 'og_image.png'
+          "ร่วมกันตรวจสอบงบประมาณรายจ่ายของ อบจ. บ้านเรา และทำให้งบประมาณเมืองเป็นเรื่องที่ทุกคนตรวจสอบได้",
       },
       {
-        hid: 'twitter:title',
-        name: 'twitter:title',
-        content: 'ผ่างบเมือง ให้งบประมาณเมือง…เป็นเรื่องตรวจสอบได้ '
-      },
-      {
-        hid: 'twitter:description',
-        name: 'twitter:description',
-        content:
-          'ร่วมกันตรวจสอบงบประมาณรายจ่ายของ อบจ. บ้านเรา และทำให้งบประมาณเมืองเป็นเรื่องที่ทุกคนตรวจสอบได้'
-      },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
+        hid: "twitter:card",
+        name: "twitter:card",
+        content: "summary_large_image",
       },
 
       {
-        hid: 'twitter:url',
-        property: 'twitter:url',
-        content: BASE_URL
-      }
+        hid: "twitter:url",
+        property: "twitter:url",
+        content: BASE_URL,
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'http://localbudgeting.actai.co/favicon.png' }
-    ]
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "http://localbudgeting.actai.co/favicon.png",
+      },
+    ],
   },
 
   // generate: {
@@ -87,50 +97,47 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/styles/main.scss',
-    'vue-slick-carousel/dist/vue-slick-carousel.css',
-    'vue-slick-carousel/dist/vue-slick-carousel-theme.css',
-    '@wevisdemo/ui/styles/index.css'
+    "~/assets/styles/main.scss",
+    "vue-slick-carousel/dist/vue-slick-carousel.css",
+    "vue-slick-carousel/dist/vue-slick-carousel-theme.css",
+    "@wevisdemo/ui/styles/index.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: './plugins/vue-slick-carousel.js' },
-    { src: './plugins/vue-dragscroll.js', mode: 'client' },
-    { src: '~/plugins/vue-gtag' }
+    { src: "./plugins/vue-slick-carousel.js", mode: "client" },
+    { src: "./plugins/vue-dragscroll.js", mode: "client" },
+    { src: "~/plugins/vue-gtag" },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/style-resources',
-    '@nuxtjs/fontawesome'
-  ],
+  buildModules: ["@nuxtjs/style-resources", "@nuxtjs/fontawesome"],
 
   fontawesome: {
     icons: {
-      solid: ['faStar', 'faChevronDown', 'faArrowDown', 'faArrowRight']
-    }
+      solid: ["faStar", "faChevronDown", "faArrowDown", "faArrowRight"],
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'vue-plausible',
-    'bootstrap-vue/nuxt',
+    "vue-plausible",
+    "bootstrap-vue/nuxt",
   ],
   styleResources: {
-    scss: ['~/assets/styles/variables.scss'],
+    scss: ["~/assets/styles/variables.scss"],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ['@wevisdemo/ui/vue2'],
+    transpile: ["@wevisdemo/ui/vue2"],
   },
 
   plausible: {
-    domain: 'localbudgeting.actai.co',
-    apiHost: 'https://analytics.punchup.world',
+    domain: "localbudgeting.actai.co",
+    apiHost: "https://analytics.punchup.world",
   },
-}
+};

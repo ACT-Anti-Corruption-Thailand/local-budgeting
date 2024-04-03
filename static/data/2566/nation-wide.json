@@ -17,7 +17,7 @@
     },
     {
       "area": "ด้านบริการชุมชนและสังคม",
-      "total": 21953805379,
+      "total": 21782136379,
       "plans": [
         {
           "plan": "การศึกษา",
@@ -42,20 +42,16 @@
         {
           "plan": "การศาสนา วัฒนธรรม และนันทนาการ",
           "total": 3133130564
-        },
-        {
-          "plan": "อุตสาหกรรมและการโยธา",
-          "total": 171669000
         }
       ]
     },
     {
       "area": "ด้านการเศรษฐกิจ",
-      "total": 21836000016,
+      "total": 22007669016,
       "plans": [
         {
           "plan": "อุตสาหกรรมและการโยธา",
-          "total": 20888376941
+          "total": 21060045941
         },
         {
           "plan": "การเกษตร",
@@ -107,299 +103,299 @@
   "budgetPerCapita": [
     {
       "name": "กระบี่",
-      "amount": null
+      "amount": 1001.4818163552341
     },
     {
       "name": "เชียงใหม่",
-      "amount": null
+      "amount": 1099.7369561845035
     },
     {
       "name": "ปทุมธานี",
-      "amount": null
+      "amount": 1468.877425116629
     },
     {
       "name": "นนทบุรี",
-      "amount": null
+      "amount": 1797.181397237323
     },
     {
       "name": "กาญจนบุรี",
-      "amount": null
+      "amount": 857.4282905425176
     },
     {
       "name": "ขอนแก่น",
-      "amount": null
+      "amount": 1091.7536748974937
     },
     {
       "name": "จันทบุรี",
-      "amount": null
+      "amount": 934.3563448265492
     },
     {
       "name": "ฉะเชิงเทรา",
-      "amount": null
+      "amount": 1203.9522847416347
     },
     {
       "name": "ชลบุรี",
-      "amount": null
+      "amount": 2353.4545213995802
     },
     {
       "name": "ชัยภูมิ",
-      "amount": null
+      "amount": 926.3960640928169
     },
     {
       "name": "ชุมพร",
-      "amount": null
+      "amount": 1012.4734093603009
     },
     {
       "name": "ตราด",
-      "amount": null
+      "amount": 1204.259202362555
     },
     {
       "name": "ตาก",
-      "amount": null
+      "amount": 822.3437528579007
     },
     {
       "name": "นครนายก",
-      "amount": null
+      "amount": 1003.9385280716658
     },
     {
       "name": "นครปฐม",
-      "amount": null
+      "amount": 1136.9503366910901
     },
     {
       "name": "นครพนม",
-      "amount": null
+      "amount": 475.56238749103073
     },
     {
       "name": "นครราชสีมา",
-      "amount": null
+      "amount": 1114.6911458783707
     },
     {
       "name": "นครสวรรค์",
-      "amount": null
+      "amount": 799.580363055588
     },
     {
       "name": "นราธิวาส",
-      "amount": null
+      "amount": 393.29483039640803
     },
     {
       "name": "บึงกาฬ",
-      "amount": null
+      "amount": 594.0076508185425
     },
     {
       "name": "บุรีรัมย์",
-      "amount": null
+      "amount": 400.07518873388267
     },
     {
       "name": "ปราจีนบุรี",
-      "amount": null
+      "amount": 1418.5381912633773
     },
     {
       "name": "ปัตตานี",
-      "amount": null
+      "amount": 638.747456959727
     },
     {
       "name": "พระนครศรีอยุธยา",
-      "amount": null
+      "amount": 1649.8524298659954
     },
     {
       "name": "พะเยา",
-      "amount": null
+      "amount": 884.0709082946407
     },
     {
       "name": "พังงา",
-      "amount": null
+      "amount": 1157.9830592773426
     },
     {
       "name": "พัทลุง",
-      "amount": null
+      "amount": 959.1810895529833
     },
     {
       "name": "พิจิตร",
-      "amount": null
+      "amount": 770.948380722864
     },
     {
       "name": "พิษณุโลก",
-      "amount": null
+      "amount": 1099.0583064467326
     },
     {
       "name": "ภูเก็ต",
-      "amount": null
+      "amount": 2950.470040738502
     },
     {
       "name": "ประจวบคีรีขันธ์",
-      "amount": null
+      "amount": 1073.036805162417
     },
     {
       "name": "มหาสารคาม",
-      "amount": null
+      "amount": 835.4472452641471
     },
     {
       "name": "มุกดาหาร",
-      "amount": null
+      "amount": 904.6868455027973
     },
     {
       "name": "ยโสธร",
-      "amount": null
+      "amount": 667.2192124810349
     },
     {
       "name": "ยะลา",
-      "amount": null
+      "amount": 611.71292477768
     },
     {
       "name": "ร้อยเอ็ด",
-      "amount": null
+      "amount": 490.7360963920431
     },
     {
       "name": "ระนอง",
-      "amount": null
+      "amount": 1280.6236080178173
     },
     {
       "name": "ระยอง",
-      "amount": null
+      "amount": 3591.934908818067
     },
     {
       "name": "ราชบุรี",
-      "amount": null
+      "amount": 827.3368537341395
     },
     {
       "name": "ลพบุรี",
-      "amount": null
+      "amount": 807.7050433531329
     },
     {
       "name": "ลำพูน",
-      "amount": null
+      "amount": 993.772526981933
     },
     {
       "name": "ศรีสะเกษ",
-      "amount": null
+      "amount": 885.1859828260032
     },
     {
       "name": "สกลนคร",
-      "amount": null
+      "amount": 632.1591775227786
     },
     {
       "name": "สงขลา",
-      "amount": null
+      "amount": 1079.983508264864
     },
     {
       "name": "สตูล",
-      "amount": null
+      "amount": 865.2463488759496
     },
     {
       "name": "สมุทรปราการ",
-      "amount": null
+      "amount": 1524.1002374326865
     },
     {
       "name": "สมุทรสาคร",
-      "amount": null
+      "amount": 1544.373810293431
     },
     {
       "name": "สระแก้ว",
-      "amount": null
+      "amount": 1129.3825939581563
     },
     {
       "name": "สระบุรี",
-      "amount": null
+      "amount": 1901.1854912836145
     },
     {
       "name": "สิงห์บุรี",
-      "amount": null
+      "amount": 1350.713329810717
     },
     {
       "name": "สุโขทัย",
-      "amount": null
+      "amount": 1041.7717749251603
     },
     {
       "name": "สุพรรณบุรี",
-      "amount": null
+      "amount": 827.236182239509
     },
     {
       "name": "สุราษฎร์ธานี",
-      "amount": null
+      "amount": 1032.0434533976488
     },
     {
       "name": "สุรินทร์",
-      "amount": null
+      "amount": 403.46641328752867
     },
     {
       "name": "อำนาจเจริญ",
-      "amount": null
+      "amount": 863.6324566156901
     },
     {
       "name": "อุดรธานี",
-      "amount": null
+      "amount": 760.4742633231863
     },
     {
       "name": "อุทัยธานี",
-      "amount": null
+      "amount": 984.5623637459994
     },
     {
       "name": "อุบลราชธานี",
-      "amount": null
+      "amount": 687.5232354368424
     },
     {
       "name": "กำแพงเพชร",
-      "amount": null
+      "amount": 1116.001742147961
     },
     {
       "name": "ตรัง",
-      "amount": null
+      "amount": 717.008760813614
     },
     {
       "name": "นครศรีธรรมราช",
-      "amount": null
+      "amount": 616.1094388512721
     },
     {
       "name": "น่าน",
-      "amount": null
+      "amount": 866.3196170467502
     },
     {
       "name": "ชัยนาท",
-      "amount": null
+      "amount": 1059.921748210399
     },
     {
       "name": "เชียงราย",
-      "amount": null
+      "amount": 773.3988164037834
     },
     {
       "name": "เพชรบูรณ์",
-      "amount": null
+      "amount": 613.7723225545434
     },
     {
       "name": "แพร่",
-      "amount": null
+      "amount": 1140.2086933064193
     },
     {
       "name": "ลำปาง",
-      "amount": null
+      "amount": 971.5101386363192
     },
     {
       "name": "เลย",
-      "amount": null
+      "amount": 836.8980452903958
     },
     {
       "name": "หนองคาย",
-      "amount": null
+      "amount": 733.9097623698044
     },
     {
       "name": "หนองบัวลำภู",
-      "amount": null
+      "amount": 599.7336705788725
     },
     {
       "name": "เพชรบุรี",
-      "amount": null
+      "amount": 940.1382630005453
     },
     {
       "name": "อ่างทอง",
-      "amount": null
+      "amount": 1076.5488709096655
     },
     {
       "name": "อุตรดิตถ์",
-      "amount": null
+      "amount": 861.8244122593188
     },
     {
       "name": "แม่ฮ่องสอน",
-      "amount": null
+      "amount": 1074.1360434611968
     }
   ]
 }

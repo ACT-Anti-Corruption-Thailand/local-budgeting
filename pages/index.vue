@@ -1,12 +1,14 @@
 <template>
   <div>
-    <Header />
-    <Intro />
-    <WvCookieConsent
-      policyUrl="https://docs.google.com/document/d/1QugAyqUlUWW2lF4mf6aun_oV6F17P_cwuJEDekdDH2w/edit"
-      :cookieOptions="cookieOptions"
-      :onAccept="onCookieAccept"
-    />
+    <client-only placeholder="loading...">
+      <Header />
+      <Intro />
+      <WvCookieConsent
+        policyUrl="https://docs.google.com/document/d/1QugAyqUlUWW2lF4mf6aun_oV6F17P_cwuJEDekdDH2w/edit"
+        :cookieOptions="cookieOptions"
+        :onAccept="onCookieAccept"
+      />
+    </client-only>
   </div>
 </template>
 

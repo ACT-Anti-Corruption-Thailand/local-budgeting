@@ -25,13 +25,7 @@
 
       <template v-if="selected_type == 'แผนงาน'">
         <div
-          class="
-            d-flex
-            flex-column flex-sm-row
-            px-2 px-sm-0
-            justify-content-center
-            flex-wrap
-          "
+          class="d-flex flex-column flex-sm-row px-2 px-sm-0 justify-content-center flex-wrap"
           v-if="total != 0"
         >
           <div class="d-flex mx-1" v-for="(item, i) in work_type" :key="i">
@@ -203,11 +197,7 @@
       </template>
       <template v-else>
         <div
-          class="
-            d-flex
-            justify-content-center
-            flex-column flex-sm-row flex-wrap
-          "
+          class="d-flex justify-content-center flex-column flex-sm-row flex-wrap"
         >
           <div class="d-flex mx-1" v-for="(item, i) in groupedByType" :key="i">
             <div
@@ -519,16 +509,6 @@ export default {
               tasks: combineTasks(tasksByPlan),
             };
           });
-
-          // console.log(this.groupedByArea);
-
-          // this.groupedByArea.map((x, i, ref) => {console.log(x.total)
-          //   this.groupedByAreaSlide.map((y, j, ref2) => {
-          //     y.total_all = x.total;
-          //   });
-          // });
-
-          // console.log(this.groupedByAreaSlide);
         });
     },
     selectWorkPlan(index) {
