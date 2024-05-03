@@ -762,9 +762,19 @@ export default {
       tasks: [],
       work_type: [
         { name: "ด้านบริหารทั่วไป", color: "#F2A8EE", total: 0, plans: [] },
-        { name: "ด้านบริการชุมชน", color: "#89E26A", total: 0, plans: [] },
-        { name: "ด้านเศรษฐกิจ", color: "#FF8540", total: 0, plans: [] },
-        { name: "ด้านการดำเนินงานอื่น", color: "#4A4E5E", total: 0, plans: [] },
+        {
+          name: "ด้านบริการชุมชนและสังคม",
+          color: "#89E26A",
+          total: 0,
+          plans: [],
+        },
+        { name: "ด้านการเศรษฐกิจ", color: "#FF8540", total: 0, plans: [] },
+        {
+          name: "ด้านการดำเนินงานอื่น ๆ ",
+          color: "#4A4E5E",
+          total: 0,
+          plans: [],
+        },
       ],
       keyword: [
         {
@@ -1038,8 +1048,12 @@ export default {
               let result = this.groupedByArea.map((a) => a.plans);
 
               this.work_type.forEach((element, i) => {
-                this.work_type[i].plans = result[i];
-                this.work_type[i].total = this.groupedByArea[i].total;
+                let group = this.groupedByArea.filter(
+                  (x) => x.area == element.name
+                );
+
+                this.work_type[i].plans = group[0].plans;
+                this.work_type[i].total = group[0].total;
               });
 
               this.work_type.map((x, i, ref) => {
